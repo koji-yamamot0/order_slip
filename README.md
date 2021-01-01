@@ -12,11 +12,11 @@ has_many :menus
 
 ## menusテーブル
 
-| Column | Type   | Option      |
-| ------ | -----  | ----------- |
-| title  | string | null: false |
-| price  | string | null: false |
-| text   | text   | null: false |
+| Column | Type    | Option      |
+| ------ | ------  | ----------- |
+| title  | string  | null: false |
+| price  | integer | null: false |
+| text   | text    | null: false |
 
 ### Association
 belongs_to :user
