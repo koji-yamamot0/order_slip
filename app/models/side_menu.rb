@@ -1,0 +1,2 @@
+class SideMenu < ApplicationRecord
+end
