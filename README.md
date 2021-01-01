@@ -8,12 +8,25 @@
 | encrypted_password | string | null: false |
 
 ### Association
-
+has_many :menus
 
 ## menusテーブル
 
-| Column 
-| ------
-| title
-| price
-| 
+| Column | Type   | Option      |
+| ------ | -----  | ----------- |
+| title  | string | null: false |
+| price  | string | null: false |
+| text   | text   | null: false |
+
+### Association
+belongs_to :user
+
+## customerテーブル
+
+| Column           | Type    | Option      |
+| ---------------- | ------- | ----------- |
+| family_name      | string  | null: false |
+| number_of_people | integer | null: false |
+
+### Association
+has_many :menus
