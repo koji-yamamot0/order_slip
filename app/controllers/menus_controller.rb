@@ -9,15 +9,14 @@ class MenusController < ApplicationController
   end
   
   def create
-    binding.pry
     @menu = Menu.new(menu_params)
     @menu.save
   end
 
   private
 
-  def menu_find
-    @menu = Menu.find(params[:id])
+  def menu_params
+    params.require(:menu).permit(:title, :text, :price, :category_id, :image)
   end
 
 end
