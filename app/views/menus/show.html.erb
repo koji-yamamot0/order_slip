@@ -1,1 +1,16 @@
-メニュー詳細
+<%= render "shared/header" %>
+<div class="menu-data">
+  <li>
+    <%= @menu.title %>
+  </li>
+  <li>
+    <%= image_tag @menu.image %>
+  </li>
+  <li>
+    <%= @menu.text %>
+  </li>
+  <li>
+    <%= @menu.price %>円
+  </li>
+</div>
+<%= render "shared/footer" %>

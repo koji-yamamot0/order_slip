@@ -1,7 +1,6 @@
 .main{
   width: 100vw;
   text-align: center;
-  background-color: darkcyan;
 }
 
 .all-menu{
@@ -10,7 +9,7 @@
 }
 
 .main-menu{
-  background-color: burlywood;
+  background-color: skyblue;
   display: flex;
   flex-direction: column;
   padding-bottom: 5vh;
@@ -24,7 +23,7 @@
 }
 
 .dessert{
-  background-color: aqua;
+  background-color: pink;
   display: flex;
   flex-direction: column;
   padding-bottom: 5vh;
