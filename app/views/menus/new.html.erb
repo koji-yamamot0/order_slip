@@ -1,0 +1,16 @@
+<div class="main">
+  <li>新メニュー追加ページ</li>
+  <%= form_with model: @menu, url: menus_path(@menu), class: "menu-input", local: true do |f| %>
+    <li>新メインメニューの追加</li>
+    <label class="input-label">メインメニューの名前
+      <%= f.text_area :title, class: "menu-title", placeholder: "メインメニューの名前を入力してください" %>
+    </label>
+    <label class="input-label">メインメニューの説明
+      <%= f.text_area :text, class: "menu-text", placeholder: "メインメニューの説明を入力してください" %>
+    </label>
+    <label class="input-label">値段
+      <%= f.text_field :price, class: "menu-price"%>
+    </label>
+    <%= f.submit "登録する", class: "input-submit" %>
+  <% end %>
+</div>
