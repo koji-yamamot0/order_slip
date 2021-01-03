@@ -1,5 +1,7 @@
 class MenusController < ApplicationController
 
+  before_action :find_menu, only: [:show]
+
   def index
     @menus = Menu.order("created_at DESC")
   end
@@ -13,10 +15,17 @@ class MenusController < ApplicationController
     @menu.save
   end
 
+  def show
+  end
+
   private
 
   def menu_params
     params.require(:menu).permit(:title, :text, :price, :category_id, :image)
+  end
+
+  def find_menu
+    @menu = Menu.find(params[:id])
   end
 
 end
