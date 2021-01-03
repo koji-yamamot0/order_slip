@@ -3,27 +3,42 @@
 </div>
 
 <div class='main'>
-  <div class='menu'>
+  <div class='all-menu'>
     メニュー
     <div class='main-menu'>
       メインメニュー
       <%# 繰り返し表示設定 %>
-      <div class>
-      </div>
+      <% @menus.each do |menu|%>
+        <div class='menu-content'>
+          <% if menu.category.name == "メインメニュー" %>
+            <%= image_tag menu.image %>
+          <% end %>
+        </div>
+      <% end %>
       <%# 繰り返し表示設定 %>
     </div>
     <div class='side-menu'>
       サイドメニュー
       <%# 繰り返し表示設定 %>
-      <div class>
-      </div>
+      <% @menus.each do |menu|%>
+        <% if menu.category.name == "サイドメニュー" %>
+          <div class='menu-content'>
+            <%= image_tag menu.image %>
+          </div>
+        <% end %>
+      <% end %>
       <%# 繰り返し表示設定 %>
     </div>
     <div class='dessert'>
       デザート
       <%# 繰り返し表示設定 %>
-      <div class>
-      </div>
+      <% @menus.each do |menu|%>
+        <% if menu.category.name == "デザート" %>
+          <div class='menu-content'>
+            <%= image_tag menu.image %>
+          </div>
+        <% end %>
+      <% end %>
       <%# 繰り返し表示設定 %>
     </div>
   </div>
