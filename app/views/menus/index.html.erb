@@ -2,38 +2,64 @@
 
 <div class='main'>
   <div class='all-menu'>
-    メニュー
     <div class='main-menu'>
-      メインメニュー
+      <h2>
+        メインメニュー
+      </h2>
       <%# 繰り返し表示設定 %>
       <% @menus.each do |menu|%>
         <div class='menu-content'>
           <% if menu.category.name == "メインメニュー" %>
-            <%= image_tag menu.image %>
+            <%= link_to url: '#' do %>
+              <li>
+                <%= menu.title %>
+              </li>
+              <li>
+                <%= image_tag menu.image, class: 'menu-image' %>
+              </li>
+            <% end %>
           <% end %>
         </div>
       <% end %>
       <%# 繰り返し表示設定 %>
     </div>
     <div class='side-menu'>
-      サイドメニュー
+      <h2>
+        サイドメニュー
+      </h2>
       <%# 繰り返し表示設定 %>
       <% @menus.each do |menu|%>
         <% if menu.category.name == "サイドメニュー" %>
           <div class='menu-content'>
-            <%= image_tag menu.image %>
+            <%= link_to url: '#' do %>
+              <li>
+                <%= menu.title %>
+              </li>
+              <li>
+                <%= image_tag menu.image, class: 'menu-image' %>
+              </li>
+            <% end %>
           </div>
         <% end %>
       <% end %>
       <%# 繰り返し表示設定 %>
     </div>
     <div class='dessert'>
-      デザート
+      <h2>
+        デザート
+      </h2>
       <%# 繰り返し表示設定 %>
       <% @menus.each do |menu|%>
         <% if menu.category.name == "デザート" %>
           <div class='menu-content'>
-            <%= image_tag menu.image %>
+            <%= link_to url: '#' do %>
+              <li>
+                <%= menu.title %>
+              </li>
+              <li>
+                <%= image_tag menu.image, class: 'menu-image' %>
+              </li>
+            <% end %>
           </div>
         <% end %>
       <% end %>
