@@ -10,7 +10,7 @@
       <% @menus.each do |menu|%>
         <div class='menu-content'>
           <% if menu.category.name == "メインメニュー" %>
-            <%= link_to url: '#' do %>
+            <%= link_to menu_path(menu.id) do %>
               <li>
                 <%= menu.title %>
               </li>
@@ -31,7 +31,7 @@
       <% @menus.each do |menu|%>
         <% if menu.category.name == "サイドメニュー" %>
           <div class='menu-content'>
-            <%= link_to url: '#' do %>
+            <%= link_to menu_path(menu.id) do %>
               <li>
                 <%= menu.title %>
               </li>
@@ -52,7 +52,7 @@
       <% @menus.each do |menu|%>
         <% if menu.category.name == "デザート" %>
           <div class='menu-content'>
-            <%= link_to url: '#' do %>
+            <%= link_to menu_path(menu.id) do %>
               <li>
                 <%= menu.title %>
               </li>
