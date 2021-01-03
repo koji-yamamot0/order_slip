@@ -1,0 +1,37 @@
+li{
+  list-style: none;
+  font-weight: bold;
+}
+
+.main{
+  display: block;
+  align-items: center;
+}
+
+.menu-input{
+  align-items: center;
+}
+
+.input-label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  color: blue;
+}
+
+.menu-title{
+  width: 45%;
+  height: 20px;
+  font-size: 16px;
+}
+
+.menu-text{
+  width: 45%;
+  height: 150px;
+  font-size: 16px;
+}
+
+.input-submit{
+  margin-bottom: 20px;
+}
