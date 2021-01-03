@@ -2,15 +2,21 @@
   <li>新メニュー追加ページ</li>
   <%= form_with model: @menu, url: menus_path(@menu), class: "menu-input", local: true do |f| %>
     <li>新メインメニューの追加</li>
-    <label class="input-label">メインメニューの名前
-      <%= f.text_area :title, class: "menu-title", placeholder: "メインメニューの名前を入力してください" %>
+    <label class="input-label">メニューの名前
+      <%= f.text_area :title, class: "menu-title", placeholder: "メニューの名前を入力してください" %>
     </label>
-    <label class="input-label">メインメニューの説明
-      <%= f.text_area :text, class: "menu-text", placeholder: "メインメニューの説明を入力してください" %>
+    <label class="input-label">メニューの説明
+      <%= f.text_area :text, class: "menu-text", placeholder: "メニューの説明を入力してください" %>
     </label>
     <label class="input-label">値段
       <%= f.text_field :price, class: "menu-price"%>
     </label>
+    <label class="input-label">カテゴリーの選択
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
+    </label>
+    <label class="input-label">画像の選択
+      <%= f.file_field :image, class: "menu-image" %>
+    </label>
     <%= f.submit "登録する", class: "input-submit" %>
   <% end %>
-</div>
+</div> 
