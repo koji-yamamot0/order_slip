@@ -8,6 +8,7 @@ class MenusController < ApplicationController
   end
   
   def create
+    binding.pry
     @menu = Menu.new(menu_params)
     @menu.save
   end
@@ -15,6 +16,6 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:title, :text, :price, :category_id)
+    params.require(:menu).permit(:title, :text, :price, :category_id, :image)
   end
 end
