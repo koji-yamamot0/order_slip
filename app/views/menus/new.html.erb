@@ -1,7 +1,8 @@
+<%= render "shared/header" %>
+
 <div class="main">
-  <li>新メニュー追加ページ</li>
   <%= form_with model: @menu, url: menus_path(@menu), class: "menu-input", local: true do |f| %>
-    <li>新メインメニューの追加</li>
+    <li>新メニューの追加</li>
     <label class="input-label">メニューの名前
       <%= f.text_area :title, class: "menu-title", placeholder: "メニューの名前を入力してください" %>
     </label>
@@ -20,3 +21,5 @@
     <%= f.submit "登録する", class: "input-submit" %>
   <% end %>
 </div> 
+
+<%= render "shared/footer"%>

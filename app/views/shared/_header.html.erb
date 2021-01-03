@@ -1,4 +1,5 @@
 <div class='header'>
+  <li><%= link_to "トップページへ", root_path, class: 'root-link', local: true %></li>
   <ul class='user-management'>
     <% if user_signed_in? %>
       <li><%= link_to "新メニュー登録ページへ", new_menu_path, class: "new-menu-page", local: true %></li>

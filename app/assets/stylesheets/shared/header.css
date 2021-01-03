@@ -1,0 +1,38 @@
+.header{
+  background-color: lightblue;
+  display: flex;
+  height: 5vh;
+  line-height: 5vh;
+  text-decoration: none;
+}
+
+.root-link{
+  width: 20vw;
+  margin-left: 5vw;
+  color: #333333;
+}
+
+.user-management{
+  width: 80vw;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.logout {
+  color: #333333;
+}
+
+.login {
+  color: #333333;
+  margin-right: 3vw;
+}
+
+.sign-up {
+  color: #333333;
+}
+
+.new-menu-page{
+  color: #333333;
+  margin-right: 3vw;
+}
