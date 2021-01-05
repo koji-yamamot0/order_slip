@@ -1,4 +1,35 @@
 .footer{
   background-color: gray;
+  display: flex;
   height: 10vh;
+  line-height: 10vh;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+.root-link{
+  width: 20vw;
+  margin-left: 5vw;
+}
+
+.staff-management{
+  width: 80vw;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.logout {
+}
+
+.login {
+  margin-right: 3vw;
+}
+
+.sign-up {
+}
+
+.new-menu-page{
+  margin-right: 3vw;
 }
