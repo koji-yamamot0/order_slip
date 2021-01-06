@@ -20,7 +20,8 @@
   text-decoration: none;
 }
 
-.logout {
+.order-list {
+  margin-right: 3vw;
 }
 
 .login {
