@@ -10,7 +10,7 @@ class CartsController < ApplicationController
   def add_menu
     @cart_menu = @cart.cart_menus.build(menu_id: params[:id])
     if @cart_menu.save
-      redirect_to cart_path
+      redirect_to action: :show
     else
       redirect_to controller: "menus", artion: "show"
     end
