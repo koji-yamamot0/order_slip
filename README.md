@@ -1,14 +1,24 @@
-## usersテーブル
+## staffsテーブル
 
 | Column             | Type   | Option      |
 | ------------------ | ------ | ----------- |
-| family_name        | string | null: false |
-| first_name         | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
 
 ### Association
-has_many :menus
+- has_many :menus
+
+## customersテーブル
+
+| Column             | Type       | Option            |
+| ------------------ | ---------- | ----------------- |
+| family_name        | string     | null: false       |
+| email              | string     | null: false       |
+| encrypted_password | string     | null: false       |
+| cart               | references | foreign_key: true |
+
+### Association
+- belongs_to :cart
 
 ## menusテーブル
 
@@ -19,14 +29,29 @@ has_many :menus
 | text   | text    | null: false |
 
 ### Association
-belongs_to :user
+- belongs_to :staff
+- has_many :carts
+- has_many :cart_menus
 
-## customerテーブル
+## cartsテーブル
 
-| Column           | Type    | Option      |
-| ---------------- | ------- | ----------- |
-| family_name      | string  | null: false |
-| number_of_people | integer | null: false |
+| Column | Type       | Option            |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+
+- belongs_to :customer
+- has_many :menus
+- has_many :cart_menus
+
+### cart_menusテーブル
+
+| Column   | Type         | Option            |
+| -------- | ------------ | ----------------- |
+| cart     | references   | foreign_key: true |
+| menu     | references   | foreign_key: true |
+| quantity | integer      |                   |
 
 ### Association
-has_many :menus
+
+- belongs_to :cart
+- belongs_to :menu
