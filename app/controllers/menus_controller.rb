@@ -4,6 +4,7 @@ class MenusController < ApplicationController
 
   def index
     @menus = Menu.order("created_at DESC")
+    @customer = current_customer
   end
 
   def new
