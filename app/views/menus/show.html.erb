@@ -12,5 +12,8 @@
   <li>
     <%= @menu.price %>円
   </li>
+  <%= form_with model: @cart_menu, url: add_menu_menu_path, lecal: true do |f| %>
+    <%= f.submit "注文リストに入れる" %>
+  <% end %>
 </div>
 <%= render "shared/footer" %>
