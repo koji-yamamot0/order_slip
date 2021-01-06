@@ -1,5 +1,9 @@
 <%= render "shared/header" %>
 
+<% if @customer.cart_id.present? %>
+  <%= link_to "注文リストを確認する", cart_path(@menus),local: true %>
+<% end %>
+
 <div class='main'>
   <div class='all-menu'>
     <div class='main-menu'>
