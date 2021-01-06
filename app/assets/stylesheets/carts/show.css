@@ -1,0 +1,22 @@
+.cart-menu-all{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cart-menu{
+  display: flex;
+  /* align-items: center; */
+}
+
+.menu-contents{
+  display: flex;
+  /* align-items: center; */
+}
+
+.cart-menu-title{
+} 
+
+.cart-menu-image{
+  padding: 0 50px;
+}

@@ -1,1 +1,25 @@
-注文リスト
+<%= render "shared/header" %>
+<div class='main'>
+  注文リスト
+  <div class='cart-menu-all'>
+    <% @customer.cart.menus.each do |menu| %>
+      <div class='cart-menu'>
+        <%= link_to menu_path(menu) do %>
+          <div class='menu-contents'>
+            <div class='cart-menu-title'>
+              <%= menu.title %>
+            </div>
+          </div>
+        <% end %>
+        <%= menu.price %>円
+      </div>
+    <% end %>
+  </div>
+  <% sum = 0 %>
+  <% @customer.cart.menus.each do |menu| %>
+    <% sum += menu.price %>
+  <% end %>
+  合計金額  <%= sum %>円
+</div>
+
+<%= render "shared/footer" %>
