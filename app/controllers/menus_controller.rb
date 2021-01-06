@@ -1,10 +1,10 @@
 class MenusController < ApplicationController
 
   before_action :find_menu, only: [:show]
+  before_action :set_customer
 
   def index
     @menus = Menu.order("created_at DESC")
-    @customer = current_customer
   end
 
   def new
@@ -31,6 +31,10 @@ class MenusController < ApplicationController
 
   def find_menu
     @menu = Menu.find(params[:id])
+  end
+
+  def set_customer
+    @customer = current_customer
   end
 
 end
