@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2021_01_07_043233) do
   create_table "cart_menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "menu_id"
-    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cart_id"], name: "index_cart_menus_on_cart_id"
@@ -69,8 +68,11 @@ ActiveRecord::Schema.define(version: 2021_01_07_043233) do
     t.string "text", null: false
     t.integer "price", null: false
     t.integer "category_id", null: false
+    t.string "staff_name"
+    t.bigint "staff_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["staff_id"], name: "index_menus_on_staff_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,4 +98,5 @@ ActiveRecord::Schema.define(version: 2021_01_07_043233) do
   add_foreign_key "cart_menus", "carts"
   add_foreign_key "cart_menus", "menus"
   add_foreign_key "carts", "customers"
+  add_foreign_key "menus", "staffs"
 end
