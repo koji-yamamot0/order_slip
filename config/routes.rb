@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   root to: "menus#index"
   resources :menus, only: [:index, :new, :create, :show] do
     member do
-      resources :carts, only: [:show]
-      post "add_menu", to: "carts#add_menu"
+      resources :carts, only: [:show] do 
+        member do
+          resources :orders, only: [:index, :create]
+        end
+      end
+      post "add_menu", to: "carts#add_menu" 
     end
   end
 end
