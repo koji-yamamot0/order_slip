@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
 
   before_action :find_menu, only: [:show]
-  before_action :set_customer
+  before_action :set_customer, only: [:index, :show]
 
   def index
     @menus = Menu.order("created_at DESC")
@@ -26,7 +26,7 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:title, :text, :price, :category_id, :image)
+    params.require(:menu).permit(:title, :text, :price, :category_id, :image).merge(staff_id: current_staff.id)
   end
 
   def find_menu
