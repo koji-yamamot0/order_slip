@@ -1,1 +1,11 @@
-注文画面
+注文確認画面
+<% sum = 0 %>
+<% @menus.each do |menu| %>
+  <% sum += menu.price %>
+<% end %>
+合計金額 <%= sum %> 円
+<%= form_with model: @order, url: orders_path, local: true do |f| %>
+  <%= f.hidden_field :sum %>
+  <%= f.hidden_field :quantity %>
+  <%= f.submit "注文する"%>
+<% end %>

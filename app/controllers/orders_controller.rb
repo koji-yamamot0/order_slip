@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   private
   
   def set_menu
-    @menu = Menu.all
+    @menus = current_customer.cart.menus
   end
 
   def order_params
