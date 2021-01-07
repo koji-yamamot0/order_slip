@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   private
   
   def set_menu
-    @menu = Menu.find(prams[:id])
+    @menu = Menu.all
   end
 
   def order_params
