@@ -1,12 +1,26 @@
-注文確認画面
-<% sum = 0 %>
-<% @menus.each do |menu| %>
-  <% sum += menu.price %>
-<% end %>
-合計金額 <%= sum %> 円
-ご注文の品数 <%= @menus.length %> 品
-<%= form_with model: @order, url: orders_path, local: true do |f| %>
-  <%= f.hidden_field :sum, value: "#{sum}" %>
-  <%= f.hidden_field :quantity, value: "#{@menus.length}" %>
-  <%= f.submit "注文する"%>
-<% end %>
+<%= render "shared/header" %>
+
+<div class='main'>
+  注文確認画面
+</div>
+<div class='main'>
+  <% sum = 0 %>
+  <% @menus.each do |menu| %>
+    <% sum += menu.price %>
+  <% end %>
+  <div class='sum'>
+    合計金額 <%= sum %> 円
+  </div>
+  <div class='quantity'>
+    ご注文の品数 <%= @menus.length %> 品
+  </div>
+</div>
+<div class='order-input'>
+  <%= form_with model: @order, url: orders_path, local: true do |f| %>
+    <%= f.hidden_field :sum, value: "#{sum}" %>
+    <%= f.hidden_field :quantity, value: "#{@menus.length}" %>
+    <%= f.submit "注文する"%>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
