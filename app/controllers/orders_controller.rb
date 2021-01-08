@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_menu
+  before_action :set_menu, :set_customer
 
   def index
     @order = Order.new
@@ -14,6 +14,10 @@ class OrdersController < ApplicationController
   
   def set_menu
     @menus = current_customer.cart.menus
+  end
+
+  def set_customer
+    @customer = current_customer
   end
 
   def order_params

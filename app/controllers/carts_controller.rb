@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_customer
-  before_action :set_cart
+  before_action :set_customer, :set_cart
   before_action :set_cart_menu, only: [:add_menu]
 
   def show
