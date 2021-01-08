@@ -17,6 +17,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:sum, :quantity)
+    params.require(:order).permit(:sum, :quantity).merge(customer_id: current_customer.id)
   end
 end
