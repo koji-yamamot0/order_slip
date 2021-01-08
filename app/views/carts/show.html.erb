@@ -20,6 +20,10 @@
     <% sum += menu.price %>
   <% end %>
   合計金額  <%= sum %>円
+  <div class='order'>
+    <%= link_to "注文確認画面へ", orders_path(@cart), local: true %>
+  </div>
 </div>
+
 
 <%= render "shared/footer" %>

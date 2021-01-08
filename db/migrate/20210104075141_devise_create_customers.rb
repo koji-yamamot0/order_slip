@@ -6,7 +6,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.references :cart,           fareign_key: true
+      t.references :cart
 
       ## Recoverable
       t.string   :reset_password_token
