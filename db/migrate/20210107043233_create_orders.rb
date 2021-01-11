@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.integer :sum,         null: false
       t.integer :quantity,    null: false
       t.references :customer, foreign_key: true
+      t.boolean :checked
       t.timestamps
     end
   end
