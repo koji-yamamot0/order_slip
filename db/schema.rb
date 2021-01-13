@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_043233) do
   create_table "cart_menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "menu_id"
+    t.boolean "check", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cart_id"], name: "index_cart_menus_on_cart_id"
@@ -79,7 +80,6 @@ ActiveRecord::Schema.define(version: 2021_01_07_043233) do
     t.integer "sum", null: false
     t.integer "quantity", null: false
     t.bigint "customer_id"
-    t.boolean "checked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
