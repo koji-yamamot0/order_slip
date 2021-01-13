@@ -19,6 +19,7 @@
   <%= form_with model: @order, url: orders_path, local: true do |f| %>
     <%= f.hidden_field :sum, value: "#{sum}" %>
     <%= f.hidden_field :quantity, value: "#{@menus.length}" %>
+    <%= f.hidden_field :customer_id, value: "#{@customer.id}" %>
     <%= f.submit "注文する"%>
   <% end %>
 </div>
