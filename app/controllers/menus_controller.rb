@@ -29,8 +29,8 @@ class MenusController < ApplicationController
   end
 
   def provide
-    @order = Order.find(params[:id])
-    if @order.update
+    @cart_menu = CartMenu.find(params[:cart_menu_id])
+    if @cart_menu.update(check: params[:check])
       redirect_to confirmation_path
     end
   end
