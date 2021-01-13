@@ -7,7 +7,12 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
+    if @order.valid?
+      @order.save
+    else
+      @order = Order.find_by(customer_id: params[:order][:customer_id])
+      @order.update(order_params)
+    end
   end
   
   private
@@ -21,6 +26,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:sum, :quantity).merge(customer_id: current_customer.id)
+    params.require(:order).permit(:sum, :quantity).merge(customer_id: @customer.id)
   end
 end
