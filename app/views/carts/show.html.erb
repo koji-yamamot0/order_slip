@@ -15,6 +15,13 @@
       </div>
     <% end %>
   </div>
+  <div class="cart-menu-condition">
+    <% @customer.cart.cart_menus.each do |cart_menu| %>
+      <% if cart_menu.check == true %>
+        済
+      <% end %>
+    <% end %>
+  </div>
   <% sum = 0 %>
   <% @customer.cart.menus.each do |menu| %>
     <% sum += menu.price %>
