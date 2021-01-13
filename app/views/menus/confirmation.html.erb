@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  提供待ち商品
+  <div class="order-contents">
+    <% @orders.each do |order| %>
+      <div class="provide-content">
+        <% order.customer.cart.cart_menus.each do |cart_menu| %>
+          <% if cart_menu.check == false %>
+            <%= order.customer.id %>
+            <%= cart_menu.menu.title %>
+            <%= form_with model: @cart_menu, url: provide_path(@cart_menu), local: true do |f| %>
+              <%= f.hidden_field :cart_menu_id, value: cart_menu.id %>
+              <%= f.check_box :check %>
+              <%= f.submit "提供" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

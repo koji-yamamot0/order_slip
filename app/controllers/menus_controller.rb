@@ -23,6 +23,18 @@ class MenusController < ApplicationController
   def show
   end
 
+  def confirmation
+    @orders = Order.order("created_at DESC")
+    @customer = Customer.all
+  end
+
+  def provide
+    @cart_menu = CartMenu.find(params[:cart_menu_id])
+    if @cart_menu.update(check: params[:check])
+      redirect_to confirmation_path
+    end
+  end
+
   private
 
   def menu_params

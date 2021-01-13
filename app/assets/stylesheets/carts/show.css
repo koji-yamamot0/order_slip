@@ -9,10 +9,10 @@
   /* align-items: center; */
 }
 
-.menu-contents{
+/* .menu-contents{
   display: flex;
-  /* align-items: center; */
-}
+  align-items: center;
+} */
 
 .cart-menu-title{
   color: blue;
@@ -20,4 +20,9 @@
 
 .cart-menu-image{
   padding: 0 50px;
+}
+
+.cart-menu-condition{
+  display: flex;
+  flex-direction: column;
 }
